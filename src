@@ -1,0 +1,45 @@
+DROP DATABASE IF EXISTS Posto_Gasolina;
+
+
+CREATE DATABASE Posto_Gasolina;
+
+CREATE TABLE Combustiveis (
+id_combustivel INT AUTO_INCREMENT PRIMARY KEY,
+tipo VARCHAR(50) NOT NULL,
+preco_pro_litro DECIMAL(10, 2));
+
+CREATE TABLE Bombas (
+id_bomba INT AUTO_INCREMENT PRIMARY KEY,
+descricao VARCHAR(100));
+
+CREATE TABLE Funcionarios (
+id_funcionario INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+cargo VARCHAR(50),
+turno ENUM ('M','V','N'),
+telefone VARCHAR(15));
+
+CREATE TABLE Clientes (
+
+id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+telefone VARCHAR(15),
+email VARCHAR(255));
+
+CREATE TABLE Abastecimentos (
+id_abastecimento INT AUTO_INCREMENT PRIMARY KEY,
+volume DECIMAL(6,2),
+valor_total DECIMAL(10, 2),
+data_abastecimento DATETIME);
+
+CREATE TABLE Serviços (
+id_servicos INT AUTO_INCREMENT PRIMARY KEY,
+descrica VARCHAR(255),
+preco DECIMAL(10, 2));
+
+
+CREATE TABLE Transações (
+id_transacao INT AUTO_INCREMENT PRIMARY KEY,
+forma_pagamento ENUM ('Pix','Dinheiro','Cartão'),
+total_pago DECIMAL(10, 2),
+data_transacao DATETIME);
