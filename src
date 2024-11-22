@@ -3,6 +3,8 @@ DROP DATABASE IF EXISTS Posto_Gasolina;
 
 CREATE DATABASE Posto_Gasolina;
 
+USE Posto_Gasolina;
+
 CREATE TABLE Combustiveis (
 id_combustivel INT AUTO_INCREMENT PRIMARY KEY,
 tipo VARCHAR(50) NOT NULL,
